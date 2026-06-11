@@ -1,0 +1,6 @@
+game/.godot/
+build/
+*.log
+.DS_Store
+/tmp/
+.gstack/

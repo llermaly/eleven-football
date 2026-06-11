@@ -1,0 +1,10 @@
+services:
+  game-server:
+    build: ./server
+    restart: unless-stopped
+
+  web:
+    build: ./web
+    restart: unless-stopped
+    depends_on:
+      - game-server
