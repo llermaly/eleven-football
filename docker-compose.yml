@@ -2,9 +2,19 @@ services:
   game-server:
     build: ./server
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 768M
 
   web:
     build: ./web
     restart: unless-stopped
     depends_on:
       - game-server
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
